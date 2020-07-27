@@ -26,12 +26,12 @@ static NSInteger count = 0;
 
     NSString* quality = [arguments objectForKey:@"quality"];
     CGSize frameSize = CGSizeMake([[arguments objectForKey:@"width"] floatValue], [[arguments objectForKey:@"height"] floatValue]);
-    NSString* fileName = [arguments objectForKey:@"fileName"];
+    NSString* fileName = [imageUrlString stringByDeletingPathExtension];
 
     //    //Get the image from the path
     NSURL* imageURL = [NSURL URLWithString:imageUrlString];
 
-    sourceImage = [UIImage imageWithData: [NSData dataWithContentsOfURL: imageURL]];
+    sourceImage = [UIImage imageWithData: [NSData dataWithContentsOfFile: imageURL]];
 
     PHFetchResult *savedAssets = [PHAsset fetchAssetsWithLocalIdentifiers:@[fileName] options:nil];
     [savedAssets enumerateObjectsUsingBlock:^(PHAsset *asset, NSUInteger idx, BOOL *stop) {
