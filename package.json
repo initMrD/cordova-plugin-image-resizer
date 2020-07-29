@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://RTeran@github.com/RTeran/cordova-plugin-image-resizer.git"
+    "url": "git+https://github.com/initMrD/cordova-plugin-image-resizer.git"
   },
   "keywords": [
     "cordova",
